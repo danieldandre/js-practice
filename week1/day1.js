@@ -102,4 +102,3 @@ console.log(phrase)
 
 //with literals:
 const phrase1 = `The ${names} is ${age} and he is cool` // it's simply better lol
-
