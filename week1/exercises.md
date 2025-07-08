@@ -51,6 +51,45 @@ Your checkerboard pattern should be visible by calling console.log(your_array).
 
 ## Day 3
 
+### Exercise 1 - Loops
+#### Exercise 1.1 - What is a loop? Explain in the simplest way possible. 
+
+Answer: 
+
+#### Exercise 1.2 - What does a `for loop` do? Explain succinctly and create a code example.
+
+Answer: 
+
+#### Exercise 1.3 - What does a `while loop` do? Explain succinctly and create a code example.
+
+Answer:
+
+#### Exercise 1.4 - What does a `for...of` loop do? Explain succinctly and create a code example.
+
+Answer: 
+
+#### Exercise 1.5 - What does a `for...in` loop do? Explain succinctly and create a code example.
+
+Answer: 
+
+### Exercise 2
+
+Create an array for 0 -> 10. Loop over it and return only even numbers. 
+
+### Exercise 3
+
+Generate an array with random numbers of potentially random size. Loop through that array and return the largest number. 
+Hint: Use [this](https://www.30secondsofcode.org/js/s/random-integer-array-in-range/#:~:text=You%20can%20use%20Array.,()%20to%20make%20them%20integers.)
+
+### Exercise 4
+
+Modify the previous exercise to print/log the highest number and the position in the array. 
+
+### Exercise 5
+
+`{name: "Jane", age: 25}`
+
+Loop over the above structure and print each value as "key: "value". Choose the appropriate loop. 
 
 
 
