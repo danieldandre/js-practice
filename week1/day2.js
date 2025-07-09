@@ -79,3 +79,28 @@ const useFind = ages.find(CheckAge)  //this method returns the first element whi
 const useIncludes = ages.includes(18) // This method checks if the element is part of the array or not, True or False
 //console.log(useIncludes)
 //console.log(ages)
+
+
+//------Checkerboard-----//
+
+function printBoard (size){
+  let board = new Array(size)
+
+  for (let i = 0; i < size; i++){
+    board[i] = new Array(8);
+  }
+
+  for (let row = 0; row < size; row++){
+    for (let col = 0; col < size; col++){
+      board[row][col] = (row + col) % 2;
+    }
+  }
+
+  board.forEach(row => {
+    console.log(row.join(' '));
+  })
+
+  return board;
+}
+
+printBoard(8);

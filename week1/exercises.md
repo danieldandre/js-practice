@@ -54,23 +54,23 @@ Your checkerboard pattern should be visible by calling console.log(your_array).
 ### Exercise 1 - Loops
 #### Exercise 1.1 - What is a loop? Explain in the simplest way possible. 
 
-Answer: 
+Answer: A loop is a strcuture of code that repeats itself until certain conditions are met
 
 #### Exercise 1.2 - What does a `for loop` do? Explain succinctly and create a code example.
 
-Answer: 
+Answer: A for-loop runs a block od code a specific number of times, its usually in the format of: for (let i = 0; i < N; i++), N being the number of times the block will repeat itself and i the index that updates with i++ and eventually halts when the condition i < N is met.
 
 #### Exercise 1.3 - What does a `while loop` do? Explain succinctly and create a code example.
 
-Answer:
+Answer:A while-loop runs a block of code while a condtion remains true. Example on Day3.js.
 
 #### Exercise 1.4 - What does a `for...of` loop do? Explain succinctly and create a code example.
 
-Answer: 
+Answer: A for-of loop iterates directly on the values of any iterable such as arrays, strings and others.
 
 #### Exercise 1.5 - What does a `for...in` loop do? Explain succinctly and create a code example.
 
-Answer: 
+Answer: A for-in loop covers all the properties of an object. v
 
 ### Exercise 2
 
@@ -83,13 +83,13 @@ Hint: Use [this](https://www.30secondsofcode.org/js/s/random-integer-array-in-ra
 
 ### Exercise 4
 
-Modify the previous exercise to print/log the highest number and the position in the array. 
+Modify the previous exercise to print/log the highest number and the position in the array. Example in day3.js example.
 
 ### Exercise 5
 
 `{name: "Jane", age: 25}`
 
-Loop over the above structure and print each value as "key: "value". Choose the appropriate loop. 
+Loop over the above structure and print each value as "key: "value". Choose the appropriate loop. Example in day3.js example.
 
 
 
