@@ -111,13 +111,13 @@ The implementation of this flow should control at least 5 different outcomes.
 
 When would you use an if statement? 
 
-A: 
+A: The if statement runs a block of code if a specified condition is truthy. If the condition is falsy, another statement will be executed (else if and else). We can use a wide variety of conditions, like ranges, multiple variables, function calls, boolean logic, etc... Unlike the switch, the else if can return earlier ("if this fails, exit early")
 
 #### Exercise 2.2
 
 When would you use a switch statement? 
 
-A: 
+A: A switch statment should be used when there are multiple choices to select. In a switch we can only do equality checks.
 
 #### Exercise 3 - Combining loops and control flow
 #### Exercise 3.1
@@ -161,11 +161,11 @@ of cards. You should be able to pick up 5 students and shuffle anywhere from 2 t
 
 1. What does O(n) mean in programming? 
 
-A: 
+A: When a said algorith is O(n), it means that the amout of time it takes to complete grows along side the size of the input, it's a proportional growth
 
 2. What is the O(n) for the "random-pick" algorithm? 
 
-A: 
+A: O(1)
 
 3. What is the O(n) for the "Fisher-Yates"? 
 
