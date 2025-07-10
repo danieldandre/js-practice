@@ -55,16 +55,17 @@ function MysteryBox(LuckyNumber) {
 //---------Exercise 3.1-------//
 function PrintCategory(category) {
     const products = [
-        { name: 'keyboard', category: 'hardware', price: '50€' },
-        { name: 'mouse', category: 'hardware', price: '45€' },
-        { name: 'apple', category: 'fruit', price: '1€' },
-        { name: 'banana', category: 'fruit', price: '2€' },
-        { name: 'notebook', category: 'basics', price: '5€' }
+        { name: 'keyboard', category: 'hardware', price: 50 },
+        { name: 'mouse', category: 'hardware', price: 45 },
+        { name: 'apple', category: 'fruit', price: 1 },
+        { name: 'banana', category: 'fruit', price: 2 },
+        { name: 'banana', category: 'abacate', price: 8 },
+        { name: 'notebook', category: 'basics', price: 5 }
     ];
 
     for (const product of products) {
-        if (product.category == category) {
-            console.log(`${product.name}: ${product.price}`);
+        if (product.category == category || product.price < 5) {
+            console.log(`${product.name}: ${product.price}€`);
         }
     }
 }
@@ -156,12 +157,28 @@ function RoundRobin() {
     for (let i = 0; i < students.length * rand_2_7; i++) {
         students[i % students.length].hand.push(shuffled_deck.shift());
     }
-return students;
+    return students;
 
     // for (const student of students) {
     //     console.log(`${student['name']}: ${student['hand']}`)
     // }
 }
 
-const round = RoundRobin();
-console.log(round);
+//const round = RoundRobin();
+//console.log(round);
+
+function CardProb(trials, rank) {
+    let count = 0;
+
+    for (let i = 0; i < trials; i++) {
+        const rand = Math.floor(Math.random() * deck.length);
+        const card = deck[rand];
+        if (card.startsWith(rank)) {
+            count++;
+        }
+    }
+    const prob = count / trials;
+    console.log(`In ${trials} trials the ${rank} was found ${count} times with a probability of ${prob}`)
+}
+
+CardProb(1000, 'A')

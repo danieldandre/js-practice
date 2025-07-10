@@ -165,11 +165,11 @@ A: When a said algorith is O(n), it means that the amout of time it takes to com
 
 2. What is the O(n) for the "random-pick" algorithm? 
 
-A: O(1)
+A: it would be picking a random number and removing it
 
 3. What is the O(n) for the "Fisher-Yates"? 
 
-A: 
+A: the Fisher-Yates shuffle runs in O(n) time as it loops once from the last element down to the second one. There is also a constant work per interation as it generates a random index and swaps two elements.
 
 4. BONUS QUESTION: What's the chance that the first card dealt is an Ace? Your answer should be based on the outcome 
 of 1000 simulated draws. 
