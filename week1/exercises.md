@@ -165,7 +165,7 @@ A: When a said algorith is O(n), it means that the amout of time it takes to com
 
 2. What is the O(n) for the "random-pick" algorithm? 
 
-A: it would be picking a random number and removing it
+A: The O(n) for a random-pick algorithm would be picking a number and then remopving that number via the splice method. In the worst case scenario the number picked might be close the biginning which makes all subsequent elemtns to shift down one slot.
 
 3. What is the O(n) for the "Fisher-Yates"? 
 
