@@ -95,8 +95,83 @@ Loop over the above structure and print each value as "key: "value". Choose the 
 
 ## Day 4
 
+### Exercise 1 - Control Flow
+#### Exercise 1.1
 
+Implement an if, if-else, else statement. 
+The implementation of this flow should control at least 5 different outcomes. 
 
+#### Exercise 1.2
 
+Implement a switch statement. 
+The implementation of this flow should control at least 5 different outcomes. 
+
+### Exercise 2 - Questions
+#### Exercise 2.1
+
+When would you use an if statement? 
+
+A: 
+
+#### Exercise 2.2
+
+When would you use a switch statement? 
+
+A: 
+
+#### Exercise 3 - Combining loops and control flow
+#### Exercise 3.1
+
+Write a loop that iterates through an array of objects, where each object represents a product with properties like `name`, `category`, and `price`. Find and print the names of all products that belong to the "fruit" category and have a price less than $5. Use the most appropriate control flow statements for this task.
+
+#### Exercise 3.2
+
+Write a loop that will iterate through an array of words and print only those words that start and end with the same vowel (A, E, I, O, U), case-insensitive. Choose the correct control flow statement.
+
+#### Exercise 3.3
+
+In an exercise where you used switch statements, implement a default. 
+
+### Exercise 4 - Deck of Cards
+
+1. You will implement a frech, ordered deck of cards. 
+
+Ranks = `['A', '2', ..., '10', 'J', 'Q', 'K']`
+Suits = `['♠', '♥', '♦', '♣']`
+
+You may represent a card by concatenating rank and suit (e.g. `K♦`)
+
+2. Create a function that will shuffle your deck of cards using a Naïve "random-pick" - repeatedly pick a random remaining card
+until there are no more new cards. 
+
+3. Create a function that will shuffle your deck of cards using a "Fisher-Yates" shuffle. To understand the Fisher-Yates, read more about
+it here: https://www.tutorialspoint.com/data_structures_algorithms/dsa_fisher_yates_shuffle_algorithm.htm
+
+4. Using your shuffled deck, using either method, deal one card to each student in round-robin order until every student has the right number
+of cards. You should be able to pick up 5 students and shuffle anywhere from 2 to 7 cards each. 
+
+5. Return an object with two properties: 
+
+`
+  hands: string[][], --> A nested array comprised of arrays with each player's hands
+  deck: string[] --> An array with the leftover undealt cards in order
+`
+
+#### Exercise 4.1 - Follow-up theoretical questions
+
+1. What does O(n) mean in programming? 
+
+A: 
+
+2. What is the O(n) for the "random-pick" algorithm? 
+
+A: 
+
+3. What is the O(n) for the "Fisher-Yates"? 
+
+A: 
+
+4. BONUS QUESTION: What's the chance that the first card dealt is an Ace? Your answer should be based on the outcome 
+of 1000 simulated draws. 
 
 ## Day 5
