@@ -58,7 +58,7 @@ Answer: A loop is a strcuture of code that repeats itself until certain conditio
 
 #### Exercise 1.2 - What does a `for loop` do? Explain succinctly and create a code example.
 
-Answer: A for-loop runs a block od code a specific number of times, its usually in the format of: for (let i = 0; i < N; i++), N being the number of times the block will repeat itself and i the index that updates with i++ and eventually halts when the condition i < N is met.
+Answer: A for-loop runs a block of code a specific number of times, its usually in the format of: for (let i = 0; i < N; i++), N being the number of times the block will repeat itself and i the index that updates with i++ and eventually halts when the condition i < N is met.
 
 #### Exercise 1.3 - What does a `while loop` do? Explain succinctly and create a code example.
 
@@ -70,7 +70,7 @@ Answer: A for-of loop iterates directly on the values of any iterable such as ar
 
 #### Exercise 1.5 - What does a `for...in` loop do? Explain succinctly and create a code example.
 
-Answer: A for-in loop covers all the properties of an object. v
+Answer: A for-in loop covers all the properties of an object. 
 
 ### Exercise 2
 
