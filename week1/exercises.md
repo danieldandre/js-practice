@@ -175,3 +175,144 @@ A: the Fisher-Yates shuffle runs in O(n) time as it loops once from the last ele
 of 1000 simulated draws. 
 
 ## Day 5
+
+### Exercise 1 - Exception Handling
+
+1. You might remember this bit of code. Instead of using "return" to catch an error, use `throw`. 
+What is the benefit of using `throw`? Suppose, instead, that your function returned an integer instead. 
+Would handling the error with `return` have handled it better?  
+
+```js
+function ScoreGrade(score) {
+    if (typeof score !== 'number' || score < 0 || score > 100) { //Somewhere in this block
+        return 'Wrong Input';
+    }
+
+    if (score >= 90) {
+        return 'Excellent';
+    } else if (score >= 70) {
+        return 'Very good';
+    } else if (score >= 50) {
+        return 'Good';
+    } else if (score >= 20) {
+        return 'Bad';
+    } else {
+        return 'Very bad';
+    }
+}
+
+```
+
+2. Using the modified function above, implement it within a `try-catch` block. 
+Explain what happens when you implement a `try-catch` block. What cases would you want to implement it this way? 
+
+3. Now modify the try-catch statement to also include a `finally`. What can we use `finally` for? 
+
+4. Adapt the code below. Try at least 5 different types of error. 
+
+```js
+
+try {
+  something
+} catch (error) {
+  if (error instanceof RangeError) {
+    anError(error); 
+  } else if (error instanceof ReferenceError) {
+    anotherError(error);
+    ...
+  }
+}
+
+```
+
+5. Implement your own error, by extending the Error class (```extends Error```). Afterwards, show it in practice. 
+
+### Exercise 2 - Programming Paradigms
+
+
+1. What is procedural programming? How do you structure your code under an imperative (more specifically procedural) programming paradigm? 
+
+A: 
+
+2. What is Object Oriented Programming? How do you structure your code under an OOP paradigm? 
+
+A: 
+
+3. Which paradigm fits the code you've been building as of late? 
+
+A: 
+
+4. Refactor this code into as a class, following OOP. Your code should:
+- Create a TodoItem class to represent each task
+- Create a TodoList class to manage the collection
+- Encapsulate behaviours (add, remove, complete, list)
+- Eliminate reliance on global variables
+
+```js 
+
+let todos = [];
+
+function addTodo(task) {
+  todos.push({ task: task, completed: false });
+}
+
+function completeTodo(index) {
+  if (index >= 0 && index < todos.length) {
+    todos[index].completed = true;
+  }
+}
+
+function removeTodo(index) {
+  if (index >= 0 && index < todos.length) {
+    todos.splice(index, 1);
+  }
+}
+
+function listTodos() {
+  for (let i = 0; i < todos.length; i++) {
+    const status = todos[i].completed ? "✔️" : "❌";
+    console.log(`${i + 1}. ${status} ${todos[i].task}`);
+  }
+}
+
+// Usage
+addTodo("Buy milk");
+addTodo("Clean room");
+completeTodo(0);
+listTodos();
+
+```
+
+
+### Exercise 3
+
+Remove all non-letter characters and extra spaces from a sentence. 
+
+```js
+cleanSentence("  Hello!!!   This   is ##a test. ") // --> Should output: "Hello This is a test"
+
+```
+
+Hint: Use regexp with replace and trim
+
+
+### Exercise 4
+
+Create a way of converting camelCase strings to a regular sentence. 
+
+```
+breakCamelCase("camelCaseSentence"); // --> Should putout "camel Case Sentence"
+
+```
+
+
+### Exercise 5 - Bubble Sort
+
+Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted.
+
+![Bubble Sort Diagram](https://www.computersciencebytes.com/wp-content/uploads/2016/10/bubble_sort.png)
+
+Implement a bubblesort code, using a procedural paradigm. Implement a way of visually debugging your code (e.g. comparing two arrays)
+to validate, in the very least, the unsorted array vs. the sorted array. 
+
+You should also be able to pick up a pen and paper and explain how bubble sort works. 
