@@ -189,24 +189,52 @@ function ScoreGrade(score) {
     }
 
     if (score >= 90) {
-        return 'Excellent';
+        return 1;
     } else if (score >= 70) {
-        return 'Very good';
+        return 2;
     } else if (score >= 50) {
-        return 'Good';
+        return 3;
     } else if (score >= 20) {
-        return 'Bad';
+        return 4;
     } else {
-        return 'Very bad';
+        return 5;
     }
 }
 
 ```
+A: Using throw separates normal code flow from errors. A throw unwinds the stack until finding a catch, which means that it will run each active function until it finds a catch block that can handle the throw exception. A return would simple give back whatever value is there, even if this is a faulty value, potentially inducing bugs or error to slip by. If a function such as the one above returns an integer it would make every caller to be something like:
+
+```js 
+    const result = ScoreGrade(x);
+        if (result < 0) {
+        // here the error would be handled
+        } else {
+        // use result
+        }
+
+    console.log(5)
+```
+Which is more complex and time wasting then just doing:
+```js
+    try {
+        const grade = ScoreGrade(x);
+    } catch (error) { 
+        // handle error
+    }
+
+    console.log(5)
+
+```
+Using a catch will return an error object with .name, .message and others which makes understanding the problem and finding the bug much easier.
 
 2. Using the modified function above, implement it within a `try-catch` block. 
 Explain what happens when you implement a `try-catch` block. What cases would you want to implement it this way? 
 
+Yes, using try-catch is the best approach here for error-handling because if ScoreGrande throws, then the program immediatly skips to the catch. If a throw was not being used here, we would have to inspect the return value manually after every call. This is to be implemented in blocks of code where it might fail because of the user input validation, parsing JSON (transforming a string in a JS object) or network I/O (request timeout, HTTP Errors, etc...). Example in Day5.js
+
 3. Now modify the try-catch statement to also include a `finally`. What can we use `finally` for? 
+
+A: The `'finally` statement defines a code block to run regardless of the result. It is mostly used to close files, handle network connections, clearing timeouts and logging. Example in Day5.js
 
 4. Adapt the code below. Try at least 5 different types of error. 
 
@@ -232,15 +260,16 @@ try {
 
 1. What is procedural programming? How do you structure your code under an imperative (more specifically procedural) programming paradigm? 
 
-A: 
+A: Procedural programming is a programming paradigm that uses a series of steps or sequential procedures resulting in a program that executes commands efficiently receiving, interpretating and executing one instruction at the time. This is usually seen in C, Java and Pascal.
 
 2. What is Object Oriented Programming? How do you structure your code under an OOP paradigm? 
 
-A: 
+A: OOP's is an imperative paradigm* based on objects. These objects can contain data, have procedures and methods in them. The most known programming languages that support OOP are Java, C++ and Python.
+*imperative paradigm is a style where programs are built by specifyiung a sequence of commands that change the state of the program.
 
 3. Which paradigm fits the code you've been building as of late? 
 
-A: 
+A: It's a multi-paradigm language, meaning that it allows procedural code, OOP and functional style.
 
 4. Refactor this code into as a class, following OOP. Your code should:
 - Create a TodoItem class to represent each task
@@ -300,7 +329,7 @@ Hint: Use regexp with replace and trim
 
 Create a way of converting camelCase strings to a regular sentence. 
 
-```
+```js
 breakCamelCase("camelCaseSentence"); // --> Should putout "camel Case Sentence"
 
 ```
