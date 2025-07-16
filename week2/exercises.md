@@ -252,3 +252,151 @@ const result = await fetchWeather({ city: "Lisbon", units: "metric" });
 - Log before and after the fetch
 - Can you output fetched contents to a web page? Something as simple or as complicated as you'd like. 
 
+
+---
+
+## Day 8 
+
+### Exercise 1 - Iterators
+
+An **iterator** is an object that allows you to traverse through a collection one item at a time. It follows the **iterator protocol**, which means it must implement a `next()` method.
+
+The `next()` method returns an object with two properties:
+
+- `value`: the next value in the sequence
+- `done`: a boolean indicating whether the iteration is complete
+
+#### Exercise 1.1 - Iterator Protocol
+
+What is the Iterator Protocol? Who defines it? Can you find me the Iterator protocol in Javascript? What about in Python? 
+
+#### Exercise 1.2 - Implement your own Iterator
+
+Finish the code for createArrayIterator(arr) that returns an iterator over the array arr. 
+It should support .next() returning { value, done }.
+
+```js
+function createArrayIterator(arr) {
+  let index = 0;
+  return {
+    next() {
+      if (...) {  //Implement
+        return { ... }; //Implement
+      }
+      return { ... }; //Implement
+    }
+  };
+}
+
+console.log(gen.next()); // { value: 1, done: false }
+console.log(gen.next()); // { value: 2, done: false }
+```
+
+
+#### Exercise 1.3 - Object Literals
+
+Did you know this was a feature? Read more about it here: https://playcode.io/javascript/object-literal
+And implement the missing code, effectively transforming myIterator into an iterator. 
+
+```js
+const myIterator = {
+  data: [10, 20, 30],
+  index: 0,
+  next() {
+    ... //Implement missing code
+  }
+};
+```
+
+#### Exercise 1.4 - Reverse Iterator
+
+Write a function createReverseIterator(arr) that returns an object that implements the iterator protocol and yields the elements of the array in reverse order.
+
+---
+
+### Exercise 2 - Generators
+
+A generator is a special type of function that can be paused and resumed. 
+It produces a sequence of values on demand, running up to each `yield` and pausing until `.next()` is called. 
+You define a generator function using `function*`
+
+```
+function* myGenerator() {
+  yield 'A';
+  yield 'B';
+  yield 'C';
+}
+
+const gen = myGenerator();
+
+gen.next(); // Try running this code snippet
+```
+
+#### Exercise 2.1 - Fibonacci Generator
+
+Create a generator fibonacci(limit) that yields Fibonacci numbers up to a maximum value.
+
+#### Exercise 2.2 - Paginated Iterator with Yield
+
+Imagine each page of data is an array of items. Use yield* to yield individual items from each “page”.
+Note: This will be useful to navigate **paginated data sources**
+
+```js
+function* paginate(pages) {
+  // pages = [['a', 'b'], ['c'], ['d', 'e']]
+  // yields: a, b, c, d, e
+}
+
+const items = paginate([['a', 'b'], ['c'], ['d', 'e']]);
+console.log([...items]); // ['a', 'b', 'c', 'd', 'e']
+```
+
+#### Exercise 2.3 - Async Generator Fetching Usernames
+
+Simulate paginated async API calls using an async generator.
+
+```js 
+// Simulated async API that returns users by page
+async function fetchUsers(page) {
+  const pages = {
+    1: ['alice', 'bob'],
+    2: ['carol'],
+    3: []
+  };
+
+  await new Promise(r => setTimeout(r, 100)); // simulate delay
+  return pages[page] || [];
+}
+
+// Usage
+for await (const user of getAllUsers()) {
+  console.log(user); // alice, bob, carol
+}
+
+```
+
+Write an async generator `async function* getAllUsers()` that:
+- Starts from page 1
+- Keeps calling fetchUsers(page++) until it gets an empty array
+- Yields each user one by one
+
+---
+
+### Exercise 3 - Shell Sort
+
+Instead of comparing and swapping only side-by-side elements, `Shell Sort` starts by comparing items that are far apart (based on a “gap”), then reduces the gap step by step until it does a final pass with normal insertion sort.
+
+By moving elements closer to their correct position early, the final sorting pass becomes much faster.
+
+Think of it like sorting a messy bookshelf:
+- First, you roughly group books by category (big gaps).
+- Then you refine the order within each category (smaller gaps).
+- Finally, you do a final tidy-up (gap = 1).
+
+It’s called “Shell Sort” after its inventor, Donald Shell.
+
+![Shell Sort Diagram](https://miro.medium.com/v2/resize:fit:845/0*Aj2yaWXJ-t2GmSsS.jpg)
+
+Implement a `shell sort` algorithm. Include a method of **visually debugging your code**, such as logging the state of the array at each gap interval, to better understand how the array evolves over time.
+
+**Recommendation**: This one is really hard to explain or to understand. I never implemented Shell sorting myself. 
