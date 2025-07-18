@@ -270,6 +270,15 @@ The `next()` method returns an object with two properties:
 
 What is the Iterator Protocol? Who defines it? Can you find me the Iterator protocol in Javascript? What about in Python? 
 
+A: 
+The iterator protocol is a way for an object to produce a sequence of values, one at the tim, and a signal to indicate when the sequence is finished.
+An object is iterable is it has the property "Symbold.iterator" 
+The iterator is an object with next() method, which retruns {valuie: ..., done:boolean} 
+
+For Python it's  __iter__() and __next__()
+
+  
+
 #### Exercise 1.2 - Implement your own Iterator
 
 Finish the code for createArrayIterator(arr) that returns an iterator over the array arr. 

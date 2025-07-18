@@ -104,9 +104,31 @@ async function* getAllUsers() {
     } while (page.length > 0);
 }
 
-for await (const user of getAllUsers()) {
-    console.log(user); // alice, bob, carol
-}
+// for await (const user of getAllUsers()) {
+//     console.log(user); // alice, bob, carol
+// }
 
 
 //------Ex 3 ------//
+function ShellSort(arr) {
+    let size = arr.length;
+
+    for (let gap = Math.floor(size / 2); gap > 0; gap = Math.floor(gap / 2)) {
+        console.log(`Gap: ${gap}`);
+
+        for (let i = gap; i < size; i++) {
+            let temp = arr[i];  
+            let j = i;
+
+            while (j >= gap && arr[j - gap] > temp) {
+                arr[j] = arr[j - gap];
+                j -= gap;
+            }
+            arr[j] = temp;
+        }
+        console.log(arr.join(', '));
+    }
+    return arr;
+}
+
+console.log(ShellSort([12, 4, 3, 9, 18, 7, 2, 17, 13, 1, 5, 6]));
