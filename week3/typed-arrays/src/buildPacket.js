@@ -20,7 +20,7 @@ function buildPacket({
   let f = 0;
   if (flags.active) f |= 1 << 0;
   if (flags.lowBatt) f |= 1 << 1;
-  if (flags.fault)  f |= 1 << 2;
+  if (flags.fault) f |= 1 << 2;
   u8[3] = f;
 
   dv.setUint16(4, deviceId, false);        // BE
@@ -41,6 +41,11 @@ function buildPacket({
 const packet = buildPacket();
 console.log(
   Array.from(new Uint8Array(packet))
-    .map(b => b.toString(16).padStart(2,'0'))
+    .map(b => b.toString(16).padStart(2, '0'))
     .join(' ')
 );
+
+import { parsePacket } from "./parsePacket.js";
+
+const test = parsePacket(packet);
+console.log(test);
