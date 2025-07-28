@@ -60,6 +60,8 @@ When given two sets, check if all elements of set A exist in set B. Return true 
 Discover what a weak set is. Find a way of explaining it, and its use cases.
 ![Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
+A: A WeakSet is a collections of garbadge-collectables, such as objects and non-registered symbols. The WeakSet is Weak which means that the objects stored in it can be gardbadge collected when no longer in use (no more references). This can not be iterated (opposite to the regular Sets) as it doesn't provide methods for iteration due to weak references. when an object in a WeakSet is no longer referenced elsewhere it is automatically removed from the WeakSet to help avoid memory leaks.
+
 #### Exercise 8
 
 ```
@@ -77,7 +79,10 @@ user1 = null;
 1. Try adding a primitive (e.g. a number, a string, etc.). Does it work? Why or why not? 
 2. Suppose you want to add 42. How would you add it?
 3. Try using forEach through the weakset. 
+A: that is not possible as WeakSets are not iterable.
+
 4. What are the methods we have available with WeakSet? 
+A: WeakSet.prototype.add(value), WeakSet.prototype.has(value) and WeakSet.prototype.delete(value).
 
 -----------
 
