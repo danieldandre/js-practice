@@ -1,8 +1,15 @@
+import { generateUserID } from "./idGenerator.js";
+
+const loginStatusMap = new WeakMap();
+
 export class User {
+    #loginStatus;
+
     constructor(name, userId) {
         this.name = name;
-        this.userId = userId;
+        this.userId = generateUserID();
         this.borrowedBooks = [];
+        loginStatusMap.set(this, false);
     }
 
     borrowBook(book) {
@@ -22,5 +29,19 @@ export class User {
             return true;
         }
         return false;
+    }
+
+    login () {
+        loginStatusMap.set(this, true);
+        console.log(`${this.name} logged in`);
+    }
+
+    logout() {
+        loginStatusMap.set(this, false);
+        console.log(`${this.name} logged out`);
+    }
+
+    isLoggedIn() {
+        return loginStatusMap.get(this) || false;
     }
 }

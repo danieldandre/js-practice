@@ -1,5 +1,6 @@
 import { Book } from "./book.js";
 import { User } from "./user.js";
+import { loadFeature } from "./featureLoader.js";
 import { addBook, addUser, getAvailableBooks, libraryStats } from "./library.js";
 
 //Create books
@@ -21,12 +22,15 @@ addUser(user1);
 addUser(user2);
 
 //simulations
+user1.login();
+console.log(user1.isLoggedIn());
+user1.logout()
+console.log(user1.isLoggedIn());
 
 user1.borrowBook(book1);
 user2.borrowBook(book3);
 
-getAvailableBooks();
-
 user1.returnBook(book1);
 
-libraryStats();
+loadFeature("featureA");
+loadFeature("featureA");

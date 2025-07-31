@@ -119,5 +119,9 @@ Each module should:
 ![Read about strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
 - What is it? What does it do? (Explain it to me in person)
+A: Strict mode makes JS more strict about code as it turns on extra rules and warnings to avoid siletn errors or bugs. This mode blocks certain actions like using reserved keywords for variable names. Debugging gets easier since it will throw more errors.
+
 
 - Do you need it to implement it in your modules? If so, how do you do it?
+
+It's not exactly necessary to implement this in my code but since I'm using ES modules, such as import and export, strict mode is automatically enabled for that entire module. To enable strick mode all that's needed to do is write "use strict" at the top of the file or top of a function.
