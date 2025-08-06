@@ -9,21 +9,21 @@ During this Python exercise we're going to learn how to setup our Python environ
 
 1 - Let's start by understanding which version of Python you have available in your machine. Which command do you use on your terminal/powershell to view which version of Python you have?
 
-    A:
+    A: python --version
 
 2 - Cool. Now under week4/python (so js-practice/week4/python) you're going to setup a virtual environment using ![venv](https://docs.python.org/3/library/venv.html)
 
 Which command did you use to create your virtual environment? Which command do you use to initialise the environment? Which one to deactivate it? 
 
-    Create: 
+    Create: python -m venv name_of_environment
 
-    Initialise:
+    Initialise: name_of_environment\Scripts\activate
 
-    Deactivate:
+    Deactivate: deactivate
 
 3 - Awesome! Now within your initialise environment, use pip to install Numpy and the Pandas library. Which command did you use? 
 
-    A: 
+    A: pip isntall numpy pandas
 
 4 - Now verify which pandas and which numpy versions you have (using the terminal). You can either do this by: 
 - Initialising the Python terminal (usually typing python or python3), importing numpy and pandas and googling how to check which version, or;
@@ -31,25 +31,37 @@ Which command did you use to create your virtual environment? Which command do y
 
 Which one did you use, and which versions do you have? Which commands did you use? 
 
-    A:
+    A: 
+
+    for the first one:
+    ```
+    import pandas
+    import numpy
+
+    print(numpy.__version__)
+    print(pandas.__version__)
+    ```
+    second method:
+
+    pip list
 
 5 - Fantastic. venv is a great, but you'll want something even better. You're going to install `pyenv` and `virtualenv` (`pyenv-virtualenv`). The benefit of these two packages is that you can also manage the global Python version you're using in your machine easily, while also being able to set different Python versions for local environments (easily as well).
 
 Install `pyenv` and `pyenv-virtualenv`. After having them successfully installed, check which versions you have. Which command did you use? 
 
-    A: 
+    A: Too many
 
 6 - Let's start by setting up your global Python environment. Do `python versions` to view your versions of Python and local environments you have setup. Now install a new version of Python (tip: via pyenv, check Python versions online).
 
 Which Python versions do you now have installed, and which one is active? 
 
-    A:
+    A: 3.12.10(active) and 3.13.5
 
 Now install version 3.11.12 (if you don't already have it). Set it as your global python version (tip: also via pyenv). When running `python3 --version` is it correctly appearing as 3.11.12? (Note: If it's not, you may have to do some troubleshooting)
 
 7 - Now let's create a pyenv virtualenv and call it python-exercises. Which command did you use? When you use `pyenv versions`, does your pyenv-virtualenv name appear? 
 
-    A: 
+    A: no
 
 8 - Now delete your venv, the one you created in exercise 2. Instead, use `pyenv local ...` to set your local environment under the same path. Make sure it's activated. Now reinstall Numpy and Pandas. 
 
