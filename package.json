@@ -3,10 +3,37 @@
     "dotenv": "^17.2.0",
     "zod": "^4.0.5"
   },
-  "type": "module",
+  "ts-node": {
+    "esm": true
+  },
   "devDependencies": {
+    "@types/node": "^24.2.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11"
-  }
+    "tailwindcss": "^4.1.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "name": "javastuff",
+  "version": "1.0.0",
+  "description": "This repository contains weekly JavaScript exercises designed to improve your programming skills and understanding of JavaScript fundamentals.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "dev:run": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Joao-Fernandes-Silva@github.com/danieldandre/js-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieldandre/js-practice/issues"
+  },
+  "homepage": "https://github.com/danieldandre/js-practice#readme"
 }

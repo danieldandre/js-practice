@@ -81,8 +81,10 @@ const age = 30;
 - currentScore -> a number
 
 Change the value of currentScore to a string (but not the type notation). What does TypeScript do? 
+A: It alerts that the type string can not be assigned to type number.
 
 Try changing a `const` variable's value. What happens? 
+A: It gives an error as the variable is a const.
 
 ### Exercise 2.2
 
@@ -116,7 +118,7 @@ let names: Array<string> = ["Alice", "Bob"];
 
 1. Create an array of favoriteNumbers containing at least 5 numbers.
 2. Create an array of colors containing strings.
-3. Try mixing types in favoriteNumbers — does TS allow it?
+3. Try mixing types in favoriteNumbers — does TS allow it? A: Nope
 4. Create a mixed array userData that contains both strings and numbers.
 
 
@@ -136,8 +138,9 @@ function multiply(a, b) {
 - a → number
 - b → number
 - return type → number
-2. Try calling multiply(5, "cat") — what does TS do?
+2. Try calling multiply(5, "cat") — what does TS do? A: Doesn't allow it
 3. Enable "noImplicitAny": true in your tsconfig.json and remove the type annotations — what happens?
+A: Error because a and b have type any,
 4. Now change the function to print the result of a*b to the console instead of returning the value. 
 How do you indicate the function is meant to return nothing? 
 
@@ -150,7 +153,7 @@ An arrow function (called that because of the => assigner) can be single line or
 
 ```
 // single line
-const add = (x: number, y: number): number => return x + y;
+const add = (x: number, y: number): number => x + y;
 
 // multiline
 const add = (x: number, y: number): number => {
