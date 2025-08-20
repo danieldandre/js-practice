@@ -25,7 +25,8 @@ This is a feature that exists in other programming languages - including TypeScr
 
 Q: What is the difference between "Compile-time Polymorphism" and "Run-time Polymorphism"? 
 
-A: 
+A: Compile-time polymorphism enforces types to better understand the code and it happens before the code runs, being checked by TypeScript. However this disappears at runtime, the TypeScript types are removed.
+Run-time polymorphism allows the program to decide which parts of the code should be execuyted based on the type of the objects at that moment and this happens the JavaScript code is running remaining fully present during runtime.
 
 ### Exercise 1.2
 
